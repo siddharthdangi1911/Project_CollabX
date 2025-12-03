@@ -1,6 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+
+class ForgetPasswordLoader extends StatelessWidget
+{
+    const ForgetPasswordLoader({super.key});
+
+    Future<void> loadScreen() async
+    {
+        await Future.delayed(const Duration(seconds: 1));
+    }
+
+    @override
+    Widget build(BuildContext context)
+    {
+        return FutureBuilder(
+            future: loadScreen(),
+            builder: (context, snapshot)
+            {
+                if (snapshot.connectionState == ConnectionState.waiting)
+                {
+                    return Scaffold(
+                        backgroundColor: Colors.black,
+                        body: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: const BoxDecoration(
+                                gradient: LinearGradient(
+                                    colors: [Colors.black, Colors.blueGrey],
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter
+                                )
+                            ),
+                          child: Center(
+                            child: CircularProgressIndicator.adaptive(),
+                          ),
+                        )
+                    );
+                }
+
+                return const ForgetPasswordScreen();
+            }
+        );
+    }
+}
+
 class ForgetPasswordScreen extends StatefulWidget
 {
     const ForgetPasswordScreen({super.key});
@@ -90,18 +134,18 @@ class _ForgetScreenState extends State<ForgetPasswordScreen>
                                             )
                                         )
                                     ),
-                                    const SizedBox(height: 20),
+                                    const SizedBox(height: 30),
                                     ElevatedButton(
                                         onPressed: ()
                                         {
                                         },
                                         style: ElevatedButton.styleFrom(
-                                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                                            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
                                             shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(25)
                                             )
                                         ),
-                                        child: const Text("Log In", style: TextStyle(fontSize: 22))
+                                        child: const Text("Sent", style: TextStyle(fontSize: 22))
                                     )
                                 ]
                             )

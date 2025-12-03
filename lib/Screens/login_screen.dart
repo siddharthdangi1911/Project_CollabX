@@ -186,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen>
                                 child: InkWell(
                                     onTap: ()
                                     {
-                                        Navigator.push(context, MaterialPageRoute(builder: (_) => const ForgetPasswordScreen()));
+                                        Navigator.push(context, MaterialPageRoute(builder: (_) => const ForgetPasswordLoader()));
                                     },
                                     child: const Text(
                                         "Forgot password?",
