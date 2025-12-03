@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "503893066184",
+    "project_id": "collabx-us0710",
+    "storage_bucket": "collabx-us0710.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503893066184:android:88236a6c90938b229700fd",
+        "android_client_info": {
+          "package_name": "com.collabx.project_collabx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA85TETqd0PRwEl8AxFnuskSyveRz8co38"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
