@@ -88,19 +88,15 @@ class _LoginPageState extends State<LoginPage>
 
     void handleLogIn() async
     {
-        showLoading(context);
         String? result = await logIn(
             email.text.trim(),
             password.text.trim()
         );
 
         if (!mounted) return;
-
-        Navigator.pop(context);
-
         if (result == "success")
         {
-            Navigator.pushReplacement(context, CustomPageRoute(child: UserScreen()));
+            nextPage(context, UserScreen());
         }
         else if (result == "notVerified")
         {
@@ -200,9 +196,7 @@ class _LoginPageState extends State<LoginPage>
                             Align(
                                 alignment: Alignment.centerRight,
                                 child: TextButton(
-                                    onPressed: ()
-                                    {
-                                    },
+                                    onPressed: handleForgetPassword,
                                     child: const Text("Forgot Password"))
                             ),
                             const SizedBox(height: 10),

@@ -26,5 +26,5 @@ class CustomPageRoute extends PageRouteBuilder{
 }
 
 void nextPage(BuildContext context, Widget page) {
-  Navigator.of(context).push(CustomPageRoute(child: page));
+  Navigator.of(context).pushReplacement(CustomPageRoute(child: page));
 }
